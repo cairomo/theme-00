@@ -89,6 +89,19 @@
 <meta name="if:250px Posts" content="0" />
 <meta name="if:400px Posts" content="0" />
 <meta name="if:500px Posts" content="1" />
+
+<meta name="if:UpdatesTab" content="1" />
+<meta name="text:updatesTitle" content="title here" />
+<meta name="text:updatesTab" content="adipiscing elit" />
+<meta name="text:updatesTabText1" content="sed do eiusmod" />
+<meta name="text:updatesLinkURL1" content="#" />
+<meta name="text:updatesLink1" content="link" />
+<meta name="text:updatesContent1" content="tempor incididunt ut labore" /> 
+<meta name="text:updatesTabText2" content="Ut enim ad minim veniam" />
+<meta name="text:updatesLinkURL2" content="#" />
+<meta name="text:updatesLink2" content="link" />
+<meta name="text:updatesContent2" content="et dolore magna aliqua " />
+
 <meta name="if:Custom Link Four" content="1" />
 <meta name="if:Custom Link Five" content="1" />
 <meta name="if:Custom Link Six" content="1" />
@@ -462,7 +475,131 @@ ol.notes li.note blockquote a {
   box-sizing: border-box;
 }
  
+{block:ifUpdatesTab}
+ 	/* updates tab */
+ 
+#tabtab{
+    font-size:15px;
+    padding:10px;
+    margin-bottom:5px;
+    margin-top:5px;
+    background:#000;
+    color:#fff;
+    width:90%;
+    text-transform:uppercase;
+}
+ 
+ 
+#over {
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
+z-index:1000;
+position: fixed;
+top: 55px;
+left: 0px;
+width: 20px;
+background-color:transparent;
+padding: 40px 0;
+text-align: center;
+-webkit-transition-duration: 0.7s;
+-moz-transition-duration: 0.7s;
+-o-transition-duration: 0.7s;
+transition-duration: 0.7s;
+}
+ 
+#overVisible {
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
+display:block;
+overflow-y:scroll;
+overflow-x:hidden;
+top: -8px;
+left: -370px;
+position: fixed;
+width: 350px;
+height:100%;
+padding: 10px;
+padding-bottom:20px;
+padding-top:20px;
+background:#fff;
+-webkit-transition-duration: 0.7s;
+-moz-transition-duration: 0.7s;
+-o-transition-duration: 0.7s;
+transition-duration: 0.7s;
+text-align: left;
+}
+ 
+#over:hover {
+z-index:1000;
+left: 370px;
+}
+ 
+#over:hover .updates {
+opacity:0;
+-webkit-transition: opacity 0.7s linear;
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+}
+ 
+#over:hover #overVisible {
+z-index:1000;
+left: 0px;
+}
+ 
+.updates {
+display: block;
+writing-mode: lr-tb;
+position: fixed;
+left: 380px;
+top: 285px;
+font-family:Lucida Sans;
+font-size: 20px;
+font-weight: normal;
+color:#505050;
+text-transform: uppercase;
+letter-spacing: -1px;
+-webkit-transition: opacity 0.7s linear;
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+}
+ 
+{/block:ifUpdatesTab}
+ 
 </style>
+	
+{block:ifUpdatesTab}
+	<!-----------updates tab----------->
+	<div id="over">
+	<span class="updates">
+	 
+	{text:updatesTitle}
+	 
+	</span>
+	<div id="overVisible">
+	<div id="tabtab">{text:updatesTab}</div>
+	<center>
+	<div id="links">
+	 
+	<div id="tabtab">{text:updatesTabText1}</div>
+	<li><a href="{text:updatesLinkURL1}">{text:updatesLink1}</a><p>
+	<li>{text:updatesContent1}
+	<br>
+	<!--- COPY BELOW TO MAKE A NEW SECTION -->
+	<div id="tabtab">{text:updatesTabText2}</div>
+	<li><a href="{text:updatesLinkURL2}">{text:updatesLink2}</a><p>
+	<li>{text:updatesContent2}
+
+	<br>
+	<!-- END COPY -->
+	</div>
+	<br></center>
+	</div>
+	</div>
+	 
+	<!-----------end----------->
+	{/block:ifUpdatesTab}
 </head>
 <body>
  
