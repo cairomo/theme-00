@@ -5,12 +5,11 @@
 <!-- 
                                     :::::: don't remove credit ::::::
 |   |   |   |  |  |  | | | | |||||||||| http://officialwiccan.tumblr.com |||||||| | | | |  |  |  |  |   |   |
-                 __   __  _        _         _            _                         
-                / _| / _|(_)      (_)       | |          (_)                        
-          ___  | |_ | |_  _   ___  _   __ _ | |__      __ _   ___  ___  __ _  _ __  
-         / _ \ |  _||  _|| | / __|| | / _` || |\ \ /\ / /| | / __|/ __|/ _` || '_ \ 
-        | (_) || |  | |  | || (__ | || (_| || | \ V  V / | || (__| (__| (_| || | | |
-         \___/ |_|  |_|  |_| \___||_| \__,_||_|  \_/\_/  |_| \___|\___|\__,_||_| |_|  
+				       __  __ _    _      _        _                 
+				  ___ / _|/ _(_)__(_)__ _| |_ __ _(_)__ __ __ _ _ _  
+				 / _ \  _|  _| / _| / _` | \ V  V / / _/ _/ _` | ' \ 
+				 \___/_| |_| |_\__|_\__,_|_|\_/\_/|_\__\__\__,_|_||_|
+				                                                     
 
 -->
  
@@ -282,7 +281,7 @@ blockquote, blockquote blockquote {
 .post {
     width: {block:If250pxPosts}width: 250px;{/block:If250pxPosts} {block:If400pxPosts}400px{/block:If400pxPosts} {block:If500pxPosts}500px{/block:If500pxPosts};
     background: {color:Post Background};
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     clear: both;
     margin-left: 50px;
 }
@@ -295,7 +294,6 @@ blockquote, blockquote blockquote {
     font-style: italic;
 }
  
-
 #player { 
     width:30px;
     height:30px;
@@ -528,8 +526,6 @@ ol.notes li.note blockquote a {
 
 </div>
 <div id="container">
- 
-</div>
  
 <div id="content">
  
