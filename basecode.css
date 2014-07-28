@@ -322,22 +322,20 @@ blockquote, blockquote blockquote {
 }
  
 #ask {
-    width: {block:If400pxPosts}370px{/block:If400pxPosts} {block:If500pxPosts}470px{/block:If500pxPosts};
+	/* ask body */
+    width: {block:If400pxPosts}400px{/block:If400pxPosts} {block:If500pxPosts}500px{/block:If500pxPosts};
     padding: 15px;
     background: {color:Post Info};
     text-align: justify;
 }
  
 #ask {
-    width: {block:If400pxPosts}360px{/block:If400pxPosts} {block:If500pxPosts}460px{/block:If500pxPosts};
+	/* asker */
+    width: {block:If400pxPosts}380px{/block:If400pxPosts} {block:If500pxPosts}480px{/block:If500pxPosts};
     padding: 20px;
     background: {color:Link};
     color: {color:Top Bar};
     text-align: justify;
-}
- 
-#ask a {
-    color: {color:Body Font};
 }
  
 .post:hover #info {
@@ -352,20 +350,14 @@ blockquote, blockquote blockquote {
 #info {
     width: {block:If400pxPosts}400px{/block:If400pxPosts} {block:If500pxPosts}500px{/block:If500pxPosts};
     background: {color:Post Background};
-    opacity: 0;
     font-size: 14px;
     line-height: 14px;
-    position: absolute;
     text-align: center;
-    text-transform: uppercase;
     padding: 15px 0px;
-    z-index: 1;
     margin-top: 0px;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;    
-    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
 }
  
 #info a {
@@ -384,13 +376,15 @@ blockquote, blockquote blockquote {
 }
  
 #pagination a {
-    padding: 10px;
-    border: 1px solid {color:Top Bar};
     color: {color:Link};
+    padding: 10px;
+    border: 1px dotted {color:Top Bar};
+    
 }
  
 #pagination a:hover {
     background: {color:Link};
+ 	/* hover effects inherited */
 }
  
 .current_page {
@@ -399,24 +393,29 @@ blockquote, blockquote blockquote {
     background: {color:Link};
 } 
 
+#doc {
+	position:fixed;
+	bottom:10px;
+	left:10px;
+}
+
 a {
     color: {color:Link};
-    text-decoration: none;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    border-bottom:1px dotted;
 }
  
 a:hover {
     color: {color:Hover Link};
+    border-bottom:1px solid;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
  
 h1 {
     color: {color:Link};
-    font-weight: none;
     letter-spacing: -1px;
     font-family: 'Playfair Display';
     font-size: 30px;
@@ -424,7 +423,7 @@ h1 {
 }
 
 li {
-    list-style-type: square;
+    list-style-type: none;
 }
 
 li:before {
@@ -432,14 +431,7 @@ li:before {
     color: {color:Link};
 }
 
-ol.c {
-    list-style-type: upper-roman;
-}
-
-ol.d {
-    list-style-type: lower-alpha;
-}
-
+/* straight up taken from tumblr documentation */
 ol.notes {    
     padding: 0px;
     padding-left: 30px;
@@ -466,23 +458,6 @@ ol.notes li.note blockquote a {
     text-decoration: none;
 }
  
-#c {
-    width: 55px;
-    height: 18px;
-    bottom: 10px;
-    right: 10px;
-    padding: 10px 3px;
-    display: block;
-    background: {color:Top Bar};
-    border: 1px dotted {color:Link};
-    position: fixed;
-    z-index: 878767997;
-}
- 
-#c a {
-    line-height: 17px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -511,12 +486,12 @@ ol.notes li.note blockquote a {
 {/block:ifFullPageHeader}
 
 <div class="nav">
-    <b>01</b> <a href="{text:Link One URL}">{text:Link One}</a>
-    <b>02</b> <a href="{text:Link Two URL}">{text:Link Two}</a>
-    <b>03</b> <a href="{text:Link Three URL}">{text:Link Three}</a>
-    {block:ifCustomLinkFour}<b>04</b> <a href="{text:Link Four URL}">{text:Link Four}</a>{/block:ifCustomLinkFour}
-    {block:ifCustomLinkFive}<b>05</b> <a href="{text:Link Five URL}">{text:Link Five}</a>{/block:ifCustomLinkFive}
-    {block:ifCustomLinkSix}<b>06</b> <a href="{text:Link Six URL}">{text:Link Six}</a>{/block:ifCustomLinkSix}
+    <b>i.</b> <a href="{text:Link One URL}">{text:Link One}</a>
+    <b>ii.</b> <a href="{text:Link Two URL}">{text:Link Two}</a>
+    <b>iii.</b> <a href="{text:Link Three URL}">{text:Link Three}</a>
+    {block:ifCustomLinkFour}<b>iv.</b> <a href="{text:Link Four URL}">{text:Link Four}</a>{/block:ifCustomLinkFour}
+    {block:ifCustomLinkFive}<b>v.</b> <a href="{text:Link Five URL}">{text:Link Five}</a>{/block:ifCustomLinkFive}
+    {block:ifCustomLinkSix}<b>v.</b> <a href="{text:Link Six URL}">{text:Link Six}</a>{/block:ifCustomLinkSix}
 
 </div>
 <div id="container">
