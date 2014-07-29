@@ -14,6 +14,9 @@
 -->
  
 <title>{Title}</title>
+{block:Description}
+    <meta name="description" content="{MetaDescription}" />
+{/block:Description}
 <link rel="shortcut icon" href="{image:favicon}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
  
@@ -59,30 +62,24 @@
 {/block:ifInfiniteScrolling}
 
 <!-- meta tags -->
-<meta name="text:Title" content="lorem" />
-<meta name="text:Subtitle" content="ipsum dolor sit amet" />
+<meta name="image:favicon" content="http://freefavicons.org/download/blue-whale/blue-whale.png" />
 
-<meta name="image:favicon" content="" />
-
-<meta name="color:Title" content="#D1D1D1" />
-<meta name="color:Subtitle" content="#D1D1D1" />
-<meta name="color:Description" content="#D1D1D1" />
-<meta name="color:Body Font" content="#D1D1D1" />
+<meta name="color:Title" content="#fff" />
+<meta name="color:Subtitle" content="#fff" />
+<meta name="color:Body Font" content="#3D3D3D" />
 <meta name="color:Body Background" content="#F8F8F8" />
 <meta name="color:Link" content="#236C75" />
 <meta name="color:Hover Link" content="#236C75" />
-<meta name="color:Navigation Link" content="#236C75" />
-<meta name="color:Hover Navigation Link" content="#E1E1E1" />
 <meta name="color:Post Background" content="#fff" />
 <meta name="color:Border" content="#F0F0F0" />
 
-<meta name="color:Header Slab" content="#fff" />
+<meta name="text:Header Slab Color" content="rgba(0,0, 0, 0.6)" />
 <meta name="color:Top Bar" content="#fff" />
 <meta name="color:Border" content="#F0F0F0" />
 <meta name="color:Scrollbar" content="#236C75" />
 <meta name="color:Post Info" content="#fff" />
  
-<meta name="if:Full Page Header" content="1" />
+<meta name="if:Whole Header" content="1" />
 <meta name="if:Header Slab" content="1" />
 <meta name="if:Infinite Scrolling" content="0" />
 <meta name="if:Show Captions" content="1" />
@@ -92,7 +89,6 @@
 
 <meta name="if:UpdatesTab" content="1" />
 <meta name="text:updatesTitle" content="title here" />
-<meta name="text:updatesTab" content="adipiscing elit" />
 <meta name="text:updatesTabText1" content="sed do eiusmod" />
 <meta name="text:updatesLinkURL1" content="#" />
 <meta name="text:updatesLink1" content="link" />
@@ -106,7 +102,7 @@
 <meta name="if:Custom Link Five" content="1" />
 <meta name="if:Custom Link Six" content="1" />
        
-<meta name="image:Full Page Header" content="http://38.media.tumblr.com/tumblr_mbz4zraTOp1qzt15co1_1280.jpg" />
+<meta name="image:Whole Header" content="https://farm8.staticflickr.com/7100/7204444032_145426bd56_k.jpg" />
 <meta name="image:Background" content="" />
 
 <meta name="text:Link One" content="↻" />
@@ -125,7 +121,7 @@
 <!-- fonts -->
 
  <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
  
 <style type="text/css">
@@ -176,7 +172,7 @@ blockquote, blockquote blockquote {
 }
  
 .header {
-    background: url({image:Full Page Header}) fixed top center;
+    background: url({image:Whole Header}) fixed top center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -189,7 +185,7 @@ blockquote, blockquote blockquote {
 #slab {
     height: 200px;
     position: relative;
-    background: {color:Header Slab};
+    background-color: rgba(0, 0, 0, 0.7);
     margin: 0 auto;
     display: block;
     left: 0%;
@@ -198,7 +194,7 @@ blockquote, blockquote blockquote {
     z-index:2;
 }
  
-#line {
+#bracer {
     position: relative;
     top: 35%;
     display: block;
@@ -225,7 +221,7 @@ blockquote, blockquote blockquote {
     line-height: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    width: 280px;
+    width: 320px;
     position: relative;
     text-align: center;
     padding: 15px;
@@ -236,6 +232,7 @@ blockquote, blockquote blockquote {
 
 a {
     color: {color:Link};
+    text-decoration:none;
 }
  
 a:hover {
@@ -245,6 +242,10 @@ a:hover {
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+
+b {
+    font-weight:700;
 }
 
 #down {
@@ -266,14 +267,14 @@ a:hover {
 }
 
 .nav {
-	padding: 25px 0;
-	background-color: white;
+	padding: 25px 0px 0px 240px;
+	background-color: rgba(255, 255, 255, 0.6);
 	position: -webkit-sticky;
 	top: 45px;
 	z-index: 1;
 }
 .header, .nav {
-	text-align: center;
+	text-align: left;
 	color: #787878;
 }
  
@@ -293,17 +294,14 @@ a:hover {
     padding-left: 60px;
     position: static;
     margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-right: 80px;
+    padding-top: 100px;
 }
  
 .post {
     width: {block:If250pxPosts}width: 250px;{/block:If250pxPosts} {block:If400pxPosts}400px{/block:If400pxPosts} {block:If500pxPosts}500px{/block:If500pxPosts};
     background: {color:Post Background};
-    margin-bottom: 50px;
+    margin: 80px 0px 100px 50px;
     clear: both;
-    margin-left: 50px;
     float:left;
     border-width:5px;
     border-color:{color:Post Background};
@@ -520,20 +518,24 @@ ol.notes li.note blockquote a {
  
 {block:ifUpdatesTab}
  	/* updates tab */
- 
+ 	/* by http://hnnnngoverphan.tumblr.com/ */
+
 #tabtab{
-	position: absolute;
+    /*section title */
     font-size:15px;
     padding:10px;
     margin-bottom:5px;
     margin-top:5px;
-    margin-right: 5px;
-    background:#000;
-    color:#fff;
+    background:{color:Post Background};
+    border: 1px dotted {color:Link};
+    color:#000000;
     width:90%;
 }
  
-#over {
+ 
+#hnnnngoverphan {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
     z-index:1000;
     position: fixed;
     top: 55px;
@@ -548,60 +550,46 @@ ol.notes li.note blockquote a {
     transition-duration: 0.7s;
 }
  
-#overVisible {
-	display:block;
-	overflow-y:scroll;
-	overflow-x:hidden;
-	top: -8px;
-	right: -370px;
-	position: fixed;
-	width: 350px;
-	height:100%;
-	padding: 10px;
-	padding-bottom:20px;
-	padding-top:20px;
-	background:#fff;
-	-webkit-transition-duration: 0.7s;
-	-moz-transition-duration: 0.7s;
-	-o-transition-duration: 0.7s;
-	transition-duration: 0.7s;
-	text-align: right;
+#hnnnngoverphan_meow {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
+    display:block;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    top: -8px;
+    right: -370px;
+    position: fixed;
+    width: 350px;
+    height:100%;
+    padding: 10px;
+    padding-bottom:20px;
+    padding-top:20px;
+    background:#fff;
+    -webkit-transition-duration: 0.7s;
+    -moz-transition-duration: 0.7s;
+    -o-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+    text-align: right;
 }
  
-#over:hover {
-	z-index:1000;
-	left: 370px;
+#hnnnngoverphan:hover {
+    z-index:1000;
+    right: 370px;
 }
  
-#over:hover .updates {
-	opacity:0;
-	-webkit-transition: opacity 0.7s linear;
-	-webkit-transition: all 0.7s ease-in-out;
-	-moz-transition: all 0.7s ease-in-out;
-	-o-transition: all 0.7s ease-in-out;
+#hnnnngoverphan:hover .phanphan {
+    opacity:0;
+    -webkit-transition: opacity 0.7s linear;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
 }
  
-#over:hover #overVisible {
-	z-index:1000;
-	right: 0px;
+#hnnnngoverphan:hover #hnnnngoverphan_meow {
+    z-index:1000;
+    right: 0px;
 }
  
-.updates {
-	display: block;
-	position: fixed;
-	right: 10px;
-	top: 50%;
-	font-family:'Open Sans';
-	font-size: 20px;
-	font-weight: normal;
-	color:{color:Link};
-	letter-spacing: -1px;
-	-webkit-transition: opacity 0.7s linear;
-	-webkit-transition: all 0.7s ease-in-out;
-	-moz-transition: all 0.7s ease-in-out;
-	-o-transition: all 0.7s ease-in-out;
-	z-index: -10;
-}
  
 {/block:ifUpdatesTab}
  
@@ -609,49 +597,43 @@ ol.notes li.note blockquote a {
 	
 {block:ifUpdatesTab}
 	<!-----------updates tab----------->
-	<div id="over">
-	<span class="updates">
-	 
-	<div id = "leftTri"></div>
-	 
-	</span>
-	<div id="overVisible">
-	<div id="tabtab">{text:updatesTab}</div><p></p>
-	<center>
-	<div id="links">
-	 
-	<div id="tabtab">{text:updatesTabText1}</div>
-	<p></p>
-	<li><a href="{text:updatesLinkURL1}">{text:updatesLink1}</a><p>
-	<li>{text:updatesContent1}
-	<br>
-	<!--- COPY BELOW TO MAKE A NEW SECTION -->
-	<div id="tabtab">{text:updatesTabText2}</div><p></p>
-	<li><a href="{text:updatesLinkURL2}">{text:updatesLink2}</a><p>
-	<li>{text:updatesContent2}
-
-	<br>
-	<!-- END COPY -->
-	</div>
-	<br></center>
-	</div>
-	</div>
-	 
+	<div id="hnnnngoverphan">
+        <div id ="leftTri" style="margin-top:220px;"></div>
+        <div id="hnnnngoverphan_meow">
+        <div id="tabtab">links</div>
+        <center>
+        <div id="links">
+         
+        <div id="tabtab">{text:updatesTabText1}</div>
+        	<li><a href="{text:updatesLinkURL1}">{text:updatesLink1}</a><p>
+        <li>{text:updatesContent1} <p>
+        <br>
+        
+        <!-- copy to create new section -->
+        <div id="tabtab">{text:updatesTabText2}</div>
+        	<li><a href="{text:updatesLinkURL2}">{text:updatesLink2}</a><p>
+        <li>{text:updatesContent2} <p>
+        <br>
+        
+        </div>
+        <br></center>
+        </div>
+        </div>
 	<!-----------end----------->
 	{/block:ifUpdatesTab}
 </head>
 <body>
  
-{block:ifFullPageHeader}
+{block:ifWholeHeader}
 <div class = "header">
  
     {block:ifHeaderSlab}
-    <div id="line">
+    <div id="bracer">
         <div id="slab">
          
-        <div id="title">{text:Title}</div>
+        <div id="title">{Title}</div>
         <div id="subtitle">
-            {text:Subtitle}<p>
+            {MetaDescription}<p>
                 <div id = "down"><a href="#container">▾</a></div>
             </p></div>
          
@@ -659,7 +641,7 @@ ol.notes li.note blockquote a {
     </div>
     {/block:ifHeaderSlab}
  </div>
-{/block:ifFullPageHeader}
+{/block:ifWholeHeader}
 
 <div class="nav">
     <b>i.</b> <a href="{text:Link One URL}">{text:Link One}</a>
@@ -780,8 +762,8 @@ ol.notes li.note blockquote a {
              
             {block:Answer}
             <div id="ask" style="min-height: 50px;">
-            <div id = "askerIcon"><img src="{AskerPortraitURL-40}></div>
-            <b>{Asker}</b> whispered, <br>{Question}
+            <div id = "askerIcon"><img src="{AskerPortraitURL-40}"></div>
+            <b>{Asker}</b> whispered: <br>{Question}
             </div>
             <div id = "answer">{Answer}</div>
             {/block:Answer}
