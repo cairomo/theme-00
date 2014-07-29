@@ -126,6 +126,7 @@
 
  <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
  
 <style type="text/css">
  
@@ -235,10 +236,25 @@ blockquote, blockquote blockquote {
     border-top: 1px dotted {color:Border};
 }
 
+a {
+    color: {color:Link};
+    border-bottom:1px dotted;
+}
+ 
+a:hover {
+    color: {color:Hover Link};
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
 #down {
     /* arrow underneath subtitle */
     font-family: 'Times New Roman';
     font-size: 36px;
+    border-bottom:none;
 }
 
 #container {
@@ -341,6 +357,12 @@ blockquote, blockquote blockquote {
     background: {color:Post Info};
     text-align: justify;
 }
+
+#askerIcon {
+    margin: 0px 10px 5px 0px;
+    border: 5px solid {color:Top Bar};
+    float:left
+}
  
 #ask {
 	/* asker */
@@ -349,6 +371,23 @@ blockquote, blockquote blockquote {
     background: {color:Link};
     color: {color:Top Bar};
     text-align: justify;
+}
+
+#ask a {
+	/* so asker username shows up against background */
+    color: {color:Post Background};
+}
+ 
+#chat {
+    font-family:'Source Code Pro';	
+}
+
+#odd {
+    background-color:{color:Link};
+}
+
+#even {
+    background-color:{color:Hover Link};
 }
  
 .post:hover #info {
@@ -375,6 +414,11 @@ blockquote, blockquote blockquote {
  
 #info a {
     color: {color:Link};
+}
+
+#postTags {
+    font-size: 10px;
+    padding-bottom: 15px;
 }
 
 #pagination {
@@ -410,21 +454,6 @@ blockquote, blockquote blockquote {
 	position:fixed;
 	bottom:10px;
 	left:10px;
-}
-
-a {
-    color: {color:Link};
-    border-bottom:1px dotted;
-}
- 
-a:hover {
-    color: {color:Hover Link};
-    border-bottom:1px solid;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
  
 h1 {
@@ -479,16 +508,17 @@ ol.notes li.note blockquote a {
  	/* updates tab */
  
 #tabtab{
+	/* thing that sticks out, always visible */
     font-size:15px;
     padding:10px;
     margin-bottom:5px;
     margin-top:5px;
+    margin-right: 5px;
     background:#000;
     color:#fff;
     width:90%;
     text-transform:uppercase;
 }
- 
  
 #over {
 -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
@@ -496,7 +526,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 z-index:1000;
 position: fixed;
 top: 55px;
-left: 0px;
+right: 0px;
 width: 20px;
 background-color:transparent;
 padding: 40px 0;
@@ -508,61 +538,61 @@ transition-duration: 0.7s;
 }
  
 #overVisible {
--ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
-filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
-display:block;
-overflow-y:scroll;
-overflow-x:hidden;
-top: -8px;
-left: -370px;
-position: fixed;
-width: 350px;
-height:100%;
-padding: 10px;
-padding-bottom:20px;
-padding-top:20px;
-background:#fff;
--webkit-transition-duration: 0.7s;
--moz-transition-duration: 0.7s;
--o-transition-duration: 0.7s;
-transition-duration: 0.7s;
-text-align: left;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
+	display:block;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	top: -8px;
+	right: -370px;
+	position: fixed;
+	width: 350px;
+	height:100%;
+	padding: 10px;
+	padding-bottom:20px;
+	padding-top:20px;
+	background:#fff;
+	-webkit-transition-duration: 0.7s;
+	-moz-transition-duration: 0.7s;
+	-o-transition-duration: 0.7s;
+	transition-duration: 0.7s;
+	text-align: right;
 }
  
 #over:hover {
-z-index:1000;
-left: 370px;
+	z-index:1000;
+	left: 370px;
 }
  
 #over:hover .updates {
-opacity:0;
--webkit-transition: opacity 0.7s linear;
--webkit-transition: all 0.7s ease-in-out;
--moz-transition: all 0.7s ease-in-out;
--o-transition: all 0.7s ease-in-out;
+	opacity:0;
+	-webkit-transition: opacity 0.7s linear;
+	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
 }
  
 #over:hover #overVisible {
-z-index:1000;
-left: 0px;
+	z-index:1000;
+	right: 0px;
 }
  
 .updates {
-display: block;
-writing-mode: lr-tb;
-position: fixed;
-left: 380px;
-top: 285px;
-font-family:Lucida Sans;
-font-size: 20px;
-font-weight: normal;
-color:#505050;
-text-transform: uppercase;
-letter-spacing: -1px;
--webkit-transition: opacity 0.7s linear;
--webkit-transition: all 0.7s ease-in-out;
--moz-transition: all 0.7s ease-in-out;
--o-transition: all 0.7s ease-in-out;
+	display: block;
+	writing-mode: lr-tb;
+	position: fixed;
+	left: 380px;
+	top: 285px;
+	font-family:'Open Sans';
+	font-size: 20px;
+	font-weight: normal;
+	color:#505050;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	-webkit-transition: opacity 0.7s linear;
+	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
 }
  
 {/block:ifUpdatesTab}
@@ -628,7 +658,8 @@ letter-spacing: -1px;
     <b>iii.</b> <a href="{text:Link Three URL}">{text:Link Three}</a>
     {block:ifCustomLinkFour}<b>iv.</b> <a href="{text:Link Four URL}">{text:Link Four}</a>{/block:ifCustomLinkFour}
     {block:ifCustomLinkFive}<b>v.</b> <a href="{text:Link Five URL}">{text:Link Five}</a>{/block:ifCustomLinkFive}
-    {block:ifCustomLinkSix}<b>v.</b> <a href="{text:Link Six URL}">{text:Link Six}</a>{/block:ifCustomLinkSix}
+    {block:ifCustomLinkSix}<b>vi.</b> <a href="{text:Link Six URL}">{text:Link Six}</a>{/block:ifCustomLinkSix}
+    <b>vii.</b> <a href = "http://officialwiccan.tumblr.com">credit</a>
 
 </div>
 <div id="container">
@@ -643,14 +674,16 @@ letter-spacing: -1px;
                 {block:IndexPage}
                 <div id="info">
                     {block:Date}
-                    <a href="{Permalink}"><b>{TimeAgo}</b></a>
+                    	<a href="{Permalink}"><b>{TimeAgo}</b></a>
                     {/block:Date}
-                    {block:NoteCount}&nbsp;|&nbsp;<a href="{Permalink}">{NoteCountWithLabel}</a>&nbsp;|&nbsp;
+                    {block:NoteCount}
+                    	&nbsp;|&nbsp;<a href="{Permalink}">{NoteCountWithLabel}</a>&nbsp;|&nbsp;
                     {/block:NoteCount}
-                    <a href="{ReblogURL}" target="_blank">REBLOG</a><br>
+                    <a href="{ReblogURL}" target="_blank">reblog</a><br> <!-- open in new tab -->
                     {block:HasTags}
-                    <span style="font-size: 10px; letter-spacing: 1px; padding-bottom: 15px;">
-                    {block:Tags} ·<a href="{TagURL}">{Tag}</a>{/block:Tags}</span>
+                    <div id = "postTags">
+                	 {block:Tags} ·<a href="{TagURL}">{Tag}</a>{/block:Tags}
+                    </div>
                     {/block:HasTags}
                 </div>
             {/block:IndexPage}
@@ -690,11 +723,16 @@ letter-spacing: -1px;
             {/block:Link}
                            
             {block:Chat}
-            {block:Title}<h1>{Title}</h1>{/block:Title}
-            {block:Lines}
-            {block:Label}<b>{Label}</b>{/block:Label}
-            {Line}<br />
-            {/block:Lines}
+            
+	            {block:Title}<h1>{Title}</h1>{/block:Title}
+	            <div id = "chat">
+		            {block:Lines}
+		            <div id = {Alt}>
+		            	{block:Label}<b>{Label}</b>{/block:Label}
+		        	 {Line}
+		            </div><br />
+		            {/block:Lines}
+                    </div>
             {/block:Chat}
              
             {block:Audio}
@@ -733,7 +771,7 @@ letter-spacing: -1px;
              
             {block:Answer}
             <div id="ask" style="min-height: 50px;">
-            <img src="{AskerPortraitURL-40}" style="margin: 0px 10px 5px 0px; border: 5px solid {color:Top Bar}; float:left;">
+            <div id = "askerIcon"><img src="{AskerPortraitURL-40}></div>
             <b>{Asker}</b>:<br>{Question}
             </div>
             <div style="text-align:justify; margin-top:15px; padding-left:10px; padding-right:15px; margin-left:10px; margin-bottom: 15px;">{Answer}</div>
@@ -782,7 +820,5 @@ letter-spacing: -1px;
         </div>
     </div>
 </div>
-
- 
 </body>
 </html>
