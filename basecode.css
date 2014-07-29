@@ -195,18 +195,14 @@ blockquote, blockquote blockquote {
     left: 0%;
     right: 0%;
     text-align: center;
+    z-index:2;
 }
  
 #line {
-    height: 170px;
     position: relative;
-    padding: 2px;
-    border: 1px none;
     top: 35%;
-    margin: 0 auto;
     display: block;
-    left: 0%;
-    right: 0%;
+    z-index:2;
 }
  
 #title {
@@ -219,6 +215,7 @@ blockquote, blockquote blockquote {
     padding-bottom: 5px;
     width: auto;
     color: {color:Title};
+    z-index:2;
 }
  
 #subtitle {
@@ -234,11 +231,11 @@ blockquote, blockquote blockquote {
     padding: 15px;
     padding-top: 15px;
     border-top: 1px dotted {color:Border};
+    z-index:2;
 }
 
 a {
     color: {color:Link};
-    border-bottom:1px dotted;
 }
  
 a:hover {
@@ -254,7 +251,10 @@ a:hover {
     /* arrow underneath subtitle */
     font-family: 'Times New Roman';
     font-size: 36px;
-    border-bottom:none;
+}
+
+#down a {
+    border:none;
 }
 
 #container {
@@ -360,22 +360,27 @@ a:hover {
 
 #askerIcon {
     margin: 0px 10px 5px 0px;
-    border: 5px solid {color:Top Bar};
+    border: 1px dotted {color:Link};
     float:left
 }
  
 #ask {
 	/* asker */
-    width: {block:If400pxPosts}380px{/block:If400pxPosts} {block:If500pxPosts}480px{/block:If500pxPosts};
-    padding: 20px;
-    background: {color:Link};
-    color: {color:Top Bar};
+    width: {block:If400pxPosts}400px{/block:If400pxPosts} {block:If500pxPosts}500px{/block:If500pxPosts};
+    padding: 10px;
+    color: {color:Link};
     text-align: justify;
 }
 
 #ask a {
 	/* so asker username shows up against background */
-    color: {color:Post Background};
+    color: {color:Link};
+}
+
+#answer {
+   text-align:justify;
+   margin:15px 0px 15px 10px;
+   padding: 0px 15px 0px 10px;
 }
  
 #chat {
@@ -414,6 +419,7 @@ a:hover {
  
 #info a {
     color: {color:Link};
+    border: none;
 }
 
 #postTags {
@@ -503,12 +509,20 @@ ol.notes li.note blockquote a {
 * {
   box-sizing: border-box;
 }
+
+#leftTri {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent {color:Link} transparent transparent;
+}
  
 {block:ifUpdatesTab}
  	/* updates tab */
  
 #tabtab{
-	/* thing that sticks out, always visible */
+	position: absolute;
     font-size:15px;
     padding:10px;
     margin-bottom:5px;
@@ -517,29 +531,24 @@ ol.notes li.note blockquote a {
     background:#000;
     color:#fff;
     width:90%;
-    text-transform:uppercase;
 }
  
 #over {
--ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
-filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
-z-index:1000;
-position: fixed;
-top: 55px;
-right: 0px;
-width: 20px;
-background-color:transparent;
-padding: 40px 0;
-text-align: center;
--webkit-transition-duration: 0.7s;
--moz-transition-duration: 0.7s;
--o-transition-duration: 0.7s;
-transition-duration: 0.7s;
+    z-index:1000;
+    position: fixed;
+    top: 55px;
+    right: 0px;
+    width: 20px;
+    background-color:transparent;
+    padding: 40px 0;
+    text-align: center;
+    -webkit-transition-duration: 0.7s;
+    -moz-transition-duration: 0.7s;
+    -o-transition-duration: 0.7s;
+    transition-duration: 0.7s;
 }
  
 #overVisible {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='')";
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='');
 	display:block;
 	overflow-y:scroll;
 	overflow-x:hidden;
@@ -579,20 +588,19 @@ transition-duration: 0.7s;
  
 .updates {
 	display: block;
-	writing-mode: lr-tb;
 	position: fixed;
-	left: 380px;
-	top: 285px;
+	right: 10px;
+	top: 50%;
 	font-family:'Open Sans';
 	font-size: 20px;
 	font-weight: normal;
-	color:#505050;
-	text-transform: uppercase;
+	color:{color:Link};
 	letter-spacing: -1px;
 	-webkit-transition: opacity 0.7s linear;
 	-webkit-transition: all 0.7s ease-in-out;
 	-moz-transition: all 0.7s ease-in-out;
 	-o-transition: all 0.7s ease-in-out;
+	z-index: -10;
 }
  
 {/block:ifUpdatesTab}
@@ -604,20 +612,21 @@ transition-duration: 0.7s;
 	<div id="over">
 	<span class="updates">
 	 
-	{text:updatesTitle}
+	<div id = "leftTri"></div>
 	 
 	</span>
 	<div id="overVisible">
-	<div id="tabtab">{text:updatesTab}</div>
+	<div id="tabtab">{text:updatesTab}</div><p></p>
 	<center>
 	<div id="links">
 	 
 	<div id="tabtab">{text:updatesTabText1}</div>
+	<p></p>
 	<li><a href="{text:updatesLinkURL1}">{text:updatesLink1}</a><p>
 	<li>{text:updatesContent1}
 	<br>
 	<!--- COPY BELOW TO MAKE A NEW SECTION -->
-	<div id="tabtab">{text:updatesTabText2}</div>
+	<div id="tabtab">{text:updatesTabText2}</div><p></p>
 	<li><a href="{text:updatesLinkURL2}">{text:updatesLink2}</a><p>
 	<li>{text:updatesContent2}
 
@@ -772,9 +781,9 @@ transition-duration: 0.7s;
             {block:Answer}
             <div id="ask" style="min-height: 50px;">
             <div id = "askerIcon"><img src="{AskerPortraitURL-40}></div>
-            <b>{Asker}</b>:<br>{Question}
+            <b>{Asker}</b> whispered, <br>{Question}
             </div>
-            <div style="text-align:justify; margin-top:15px; padding-left:10px; padding-right:15px; margin-left:10px; margin-bottom: 15px;">{Answer}</div>
+            <div id = "answer">{Answer}</div>
             {/block:Answer}
              
             {block:PermalinkPage}<center><br>
