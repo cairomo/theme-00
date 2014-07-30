@@ -431,7 +431,7 @@ b {
     font-family: 'Open Sans';
     font-weight: 300;
     font-size: 11px;
-    width: 300px;
+    width: 450px;
     text-align: center;
 }
  
@@ -444,6 +444,7 @@ b {
  
 #pagination a:hover {
     background: {color:Link};
+    color: {color:Top Bar};
  	/* hover effects inherited */
 }
  
@@ -786,7 +787,7 @@ ol.notes li.note blockquote a {
         <div id="pagination">
                    
             {block:PreviousPage}
-                <a href="{PreviousPage}" class="jump_page">Forth</a>
+                <a href="{PreviousPage}" class="jump_page">back</a>
             {/block:PreviousPage}
                            
             {block:JumpPagination length="5"}
@@ -800,7 +801,7 @@ ol.notes li.note blockquote a {
             {/block:JumpPagination}
                            
             {block:NextPage}
-                <a href="{NextPage}" class="jump_page">Next</a>
+                <a href="{NextPage}" class="jump_page">forth</a>
             {/block:NextPage}
          
         </div>
