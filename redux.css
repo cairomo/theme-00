@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--                                        
-                   :::::: don't remove credit ::::::
+                  :::::: don't remove credit ::::::
 |   |  | | | |||| http://officialwiccan.tumblr.com |||| | | |  |  |  |    |  
        __  __ _    _      _        _                 
   ___ / _|/ _(_)__(_)__ _| |_ __ _(_)__ __ __ _ _ _  
@@ -38,10 +38,8 @@
 <meta name="if:BordersSidebar" content="0">
 <meta name="if:BordersPermalink" content="1">
 <meta name="if:RoundedCorners" content="1">
-<meta name="if:Sideimg on top of Sidebar" content="1">
 <meta name="if:InfiniteScroll" content="0" />
 <meta name="if:Caption" content="1">
-<meta name="if:Grayscale" content="0">
 <meta name="if:Custom Font" content="1">
 <meta name="if:Index Tags" content="0">
 <meta name="if:Transparent Posts" content="0">
@@ -99,38 +97,71 @@
  <link rel="shortcut icon" href="{favicon}" />
  <link rel="apple-touch-icon" href="{PortraitURL-128}"/>
  <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://static.tumblr.com/mxokwyk/FIumglicr/mbtop.min.js"></script>
+ <link href="#s-m-t-tooltip" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+<script>
+ (function($){
+ $(document).ready(function(){
+ $("[title]").style_my_tooltips();
+ });
+ })(jQuery);
+</script>
+ 
+ {block:IfInfiniteScroll}<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>{/block:IfInfiniteScroll}
+ 
+ {block:IfLazyload}<script type="text/javascript" src="http://static.tumblr.com/bmdsqsc/ogWm7q8w1/lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+var $j = jQuery.noConflict();
+$j(function() {
+if (navigator.platform == "iPad" || navigator.platform == "iPhone") return;
+$j("img").lazyload({
+placeholder : "http://static.tumblr.com/twte3d7/RSvlio0k5/grey.gif",
+effect: "fadeIn",
+});
+});
+</script>{/block:Iflazyload}
+ 
+
+
+
  <style type="text/css">
  
 iframe#tumblr_controls {
 top: -0px; !important; right:-0px; !important; position: fixed !important;}
  
 body {
-background:{color:background} url({image:background}) center center fixed repeat;
-{block:IfBackgroundCover}background-size: cover;{/block:IfBackgroundCover}
-margin: 0;
-padding: 0;
-font-family: consolas;
+    background:{color:background} url({image:background}) center center fixed repeat;
+    {block:IfBackgroundCover}background-size: cover;{/block:IfBackgroundCover}
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
 }
  
 @font-face { font-family: "boob"; src: url('http://static.tumblr.com/gvd42r2/1Y7m7jsyh/04b_03__.ttf');}
  
 .clear {
-clear: both;
-height: 0px;
-overflow: hidden;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
 }
  
 a img {
-border: none;
+    border: none;
 }
  
 ::-webkit-scrollbar-thumb:vertical {
-background-color: {color:scrollbar face};
-height: 5px;}
+    background-color: {color:scrollbar face};
+    height: 5px;
+}
  ::-webkit-scrollbar {
-height: 5px;
-width: 5px;
-background-color: {color:scrollbar bg};}
+    height: 5px;
+    width: 5px;
+    background-color: {color:scrollbar bg};
+ }
  
 ::-moz-selection {background:{color:selection bg};color:{color:selection}}
 ::selection {background:{color:selection bg};color:{color:selection};}
@@ -139,16 +170,28 @@ a { color:{color:Links};
     text-decoration:none;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear;}
+    transition: all 0.2s linear;
+}
+
 a:hover {    
     color:{color:Links Hover};
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear;}
+    transition: all 0.2s linear;
+}
  
 .topp {right:60px;bottom:10px;position:fixed}
-.topp a{color:{color:title};text-decoration:none;{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}{block:ifnotcustomfont}font-family: {font:accent};{/block:ifnotcustomfont}text-shadow:0px 0px #ccc}
-.topp a:hover{color:{color:links hover};text-shadow:-0px -50px transparent}
+.topp a{
+    color:{color:title};
+    text-decoration:none;
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    {block:ifnotcustomfont}font-family: {font:accent};{/block:ifnotcustomfont}
+    text-shadow:0px 0px #ccc
+}
+.topp a:hover{
+    color:{color:links hover};
+    text-shadow:-0px -50px transparent
+}
  
 small{font: 11px consolas !important;letter-spacing:1px !important}
 pre {font: 11px monospace !important;letter-spacing:1px !important;overflow:auto}
@@ -156,117 +199,117 @@ b, strong {font: 12px consolas !important; color:{color:bold}; font-weight:700 !
 i, em {font: italic 12px  lucida console !important; color:{color:italic};}
  
 #banner {
-position: fixed;
-z-index: -11;
-background: url('{image:banner}') top fixed repeat-x;
-width:100%;
-height: 100%;
+    position: fixed;
+    z-index: -11;
+    background: url('{image:banner}') top fixed repeat-x;
+    width:100%;
+    height: 100%;
 }
  
  #wrapper {
- width:500px;
- margin: 0 auto;
+     width:500px;
+     margin: 0 auto;
  }
  
  #wrapper #content {
-{block:if500px}width: 528px;{/block:if500px}
- {block:if400px}width: 426px;{/block:if400px}
- {block:if250px}{block:indexpage}width: 275px;{/block:indexpage}{block:permalinkpage}width: 426px;{/block:permalinkpage}{/block:if250px}
- float: left;
- margin-left:80px;
- margin-top:10px;
- z-index:1;
+     {block:if500px}width: 528px;{/block:if500px}
+     {block:if400px}width: 426px;{/block:if400px}
+     {block:if250px}{block:indexpage}width: 275px;{/block:indexpage}{block:permalinkpage}width: 426px;{/block:permalinkpage}{/block:if250px}
+     float: left;
+     margin-left:80px;
+     margin-top:10px;
+     z-index:1;
  }
  
 #wrapper #content .post {
-font-family: {font:body};
-{block:IfRoundedCorners}-moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius:10px 10px 10px 10px;{/block:IfRoundedCorners}
-{block:ifnottransparentposts}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:post opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:post opacity});{/block:ifblackposts}{/block:ifnottransparentposts}
-{block:iftransparentposts}background: transparent;{/block:iftransparentposts}
-padding: 8px;
-position: relative;
-{Block:IfBorderspost}
-border: 1px solid {color:borders};
-{/Block:IfBorderspost}
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
- transition: all 0.4s linear;
-{block:ifpostshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifpostshadow}
+    font-family: {font:body};
+    {block:IfRoundedCorners}-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius:10px 10px 10px 10px;{/block:IfRoundedCorners}
+    {block:ifnottransparentposts}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:post opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:post opacity});{/block:ifblackposts}{/block:ifnottransparentposts}
+    {block:iftransparentposts}background: transparent;{/block:iftransparentposts}
+    padding: 8px;
+    position: relative;
+    {Block:IfBorderspost}
+    border: 1px solid {color:borders};
+    {/Block:IfBorderspost}
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+     transition: all 0.4s linear;
+    {block:ifpostshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifpostshadow}
 }
  
  #wrapper #content .post .media {
- text-align: center;
- font-family: consolas;
-margin-bottom: 10px;
+     text-align: center;
+     font-family: consolas;
+    margin-bottom: 10px;
  }
  
 #wrapper #content .post .quotebg {
-font-family: georgia, serif;
-font-size: 150px;
-color: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.3);{/block:ifblackposts}
-position: absolute;
-top: 70px;
-left: 10px;
+    font-family: georgia, serif;
+    font-size: 150px;
+    color: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.3);{/block:ifblackposts}
+    position: absolute;
+    top: 70px;
+    left: 10px;
 }
  
 #wrapper #content .post .quote {
-color: {color:text};
-font-family: consolas;
-font-style: none;
-padding: 20px 20px 5px 20px;
+    color: {color:text};
+    font-family: consolas;
+    font-style: none;
+    padding: 20px 20px 5px 20px;
 }
  
 #wrapper #content .post .copy {
-color: {color:text};
-font-family:consolas;
-padding: 8px;
-font-size: 12px;
-line-height: 15px;
-margin-bottom:-8px;
+    color: {color:text};
+    font-family:consolas;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom:-8px;
 }
  
  #wrapper #content .post .copy a {
- color: {color:Links};
- text-decoration: none;
- -webkit-transition: all 0.4s ease-in-out;
--moz-transition: all 0.4s ease-in-out;
--o-transition: all 0.4s ease-in-out;
--ms-transition: all 0.4s ease-in-out;
-transition: all 0.4s ease-in-out;
+     color: {color:Links};
+     text-decoration: none;
+     -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
  }
  
  #wrapper #content .post .copy a:hover{
- color: {color:Links Hover};
- -webkit-transition: all 0.4s ease-in-out;
--moz-transition: all 0.4s ease-in-out;
--o-transition: all 0.4s ease-in-out;
--ms-transition: all 0.4s ease-in-out;
-transition: all 0.4s ease-in-out;
- text-decoration:none;
-border-bottom: 1px solid {color:borders};
+     color: {color:Links Hover};
+     -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+     text-decoration:none;
+    border-bottom: 1px solid {color:borders};
  }
  
  #wrapper #content .post .copy p {
- margin: 10px 0 0 0;
- padding: 0;
+     margin: 10px 0 0 0;
+     padding: 0;
  }
  
  #wrapper #content .post .copy pre {
- margin: 10px 0px 10px 0px;
- padding: 10px;
-background: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.3);{/block:ifblackposts}
- font-family: monospace;
- overflow: auto;
+     margin: 10px 0px 10px 0px;
+     padding: 10px;
+    background: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.3);{/block:ifblackposts}
+     font-family: monospace;
+     overflow: auto;
  }
  
  #wrapper #content .post .copy > p:first-child {
- margin-top: 0;
+    margin-top: 0;
  }
  
  #wrapper #content .post .copy img {
- max-width: 100%;
+    max-width: 100%;
  }
  
  .audio {
@@ -311,365 +354,365 @@ background: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackpo
 }
  
  .album_art img {
-{block:If500px}
-width:500px;
-{/block:If500px}
-{block:If400px}
-width:400px;
-{/block:If400px}
-{block:If250px}
-{block:indexpage}width:250px;{/block:indexpage}
-{block:permalinkpage}width:500px;{/block:permalinkpage}
-{/block:If250px}
+    {block:If500px}
+    width:500px;
+    {/block:If500px}
+    {block:If400px}
+    width:400px;
+    {/block:If400px}
+    {block:If250px}
+    {block:indexpage}width:250px;{/block:indexpage}
+    {block:permalinkpage}width:500px;{/block:permalinkpage}
+    {/block:If250px}
 }
  
 #wrapper #content .post .question {
-color: {color:text};
-font-size: 16px;
-font-weight: bold;
-{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-background: {block:ifnotblackposts}rgba(255, 255, 255, 0.6);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.6);{/block:ifblackposts}
-border: 1px solid {color:borders};
--moz-border-radius: 8px;
--webkit-border-radius: 8px;
-border-radius: 8px;
-margin: 0 0 15px 0;
-padding: 15px 20px;
-position: relative;
+    color: {color:text};
+    font-size: 16px;
+    font-weight: bold;
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    background: {block:ifnotblackposts}rgba(255, 255, 255, 0.6);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.6);{/block:ifblackposts}
+    border: 1px solid {color:borders};
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    margin: 0 0 15px 0;
+    padding: 15px 20px;
+    position: relative;
 }
  
 #wrapper #content .post .asker_container {
-margin: 0 0 20px 24px;
+    margin: 0 0 20px 24px;
 }
  
 #wrapper #content .post .asker_container img {
-margin: 0 12px -7px 0;
--moz-border-radius: 12px;
--webkit-border-radius: 12px;
-border-radius: 12px;
+    margin: 0 12px -7px 0;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
 }
  
 #wrapper #content .post .asker_container a.asker {
-color: {color:Background};
+    color: {color:Background};
 }
  
 #wrapper #content .post .title {
-{block:ifnotcustomfont}font-family:consolas;{/block:ifnotcustomfont}
-{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-color: {color:bold};
-font-size: 16px;
-font-weight: bold;
-padding: 10px 10px 0 10px;
+    {block:ifnotcustomfont}font-family:consolas;{/block:ifnotcustomfont}
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    color: {color:bold};
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 10px 0 10px;
 }
  
  #wrapper #content .post img {
- {block:if500px}max-width:500px;{/block:if500px}
- {block:if400px}max-width: 400px;{/block:if400px}
- {block:if250px}{block:indexpage}max-width: 250px;{/block:indexpage}{block:permalinkpage}max-width: 400px;{/block:permalinkpage}{/block:if250px}
+     {block:if500px}max-width:500px;{/block:if500px}
+     {block:if400px}max-width: 400px;{/block:if400px}
+     {block:if250px}{block:indexpage}max-width: 250px;{/block:indexpage}{block:permalinkpage}max-width: 400px;{/block:permalinkpage}{/block:if250px}
  }
  
 #wrapper #content .post .chat {
-border-left: 3px solid {color:blockquote};
-margin: 10px 10px 0 10px;
-font-size: 13px;
+    border-left: 3px solid {color:blockquote};
+    margin: 10px 10px 0 10px;
+    font-size: 13px;
 }
  
 #wrapper #content .post .chat .lines {
-margin-left: 1px;
-font-family: consolas;
+    margin-left: 1px;
+    font-family: consolas;
 }
  
 #wrapper #content .post .chat .lines .line {
-color: {color:text};
-margin-bottom: 1px;
-padding: 3px 5px;
+    color: {color:text};
+    margin-bottom: 1px;
+    padding: 3px 5px;
 }
  
 #wrapper #content .post .chat .lines .line.even {
 }
  
 #wrapper #content .post .link {
-margin: 4px 0 2px 0;
-font-size: 16px;
-line-height: 25px;
-text-transform:lowercase;
+    margin: 4px 0 2px 0;
+    font-size: 16px;
+    line-height: 25px;
+    text-transform:lowercase;
 }
  
 #wrapper #content .post .link a {
-{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-color: {color:links};
-padding: 5px 7px;
--moz-border-radius: 4px;
--webkit-border-radius: 4px;
-border-radius: 4px;
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    color: {color:links};
+    padding: 5px 7px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
  
 #wrapper #content .post .link a:hover {
-letter-spacing: 2px;
-opacity: 0.5;
-filter: alpha(opacity=50);
--ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    letter-spacing: 2px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
  
 #wrapper #content .post .footer {
-   {block:ifnotcustomfont} font-family: {font:accent};{/block:ifnotcustomfont}
-    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-    font-size: 9px;
-    color: {color:permalinktext};
-    padding: 2px 2px;
-    line-height: 13px;
-    margin-top: 4px;
-{block:ifborderspermalink}border-top : 1px dashed {color:borders}; {/block:ifborderspermalink}
+       {block:ifnotcustomfont} font-family: {font:accent};{/block:ifnotcustomfont}
+        {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+        font-size: 9px;
+        color: {color:permalinktext};
+        padding: 2px 2px;
+        line-height: 13px;
+        margin-top: 4px;
+    {block:ifborderspermalink}border-top : 1px dashed {color:borders}; {/block:ifborderspermalink}
     }    
  
 #wrapper #content .post .footer .date {
-{block:if400px}width:60%;{block:if400px}
-{block:if500px}width:60%;{block:if500px}
-{block:if250px}width:50%;{block:if250px}
-display: inline;
-text-align:left;
-float:left;
-color: {color:permalinktext};
+    {block:if400px}width:60%;{block:if400px}
+    {block:if500px}width:60%;{block:if500px}
+    {block:if250px}width:50%;{block:if250px}
+    display: inline;
+    text-align:left;
+    float:left;
+    color: {color:permalinktext};
 }
  
 #wrapper #content .post .footer .date a {
-color: {color:permalinktext};
+    color: {color:permalinktext};
 }
  
 #wrapper #content .post .footer .notes {
-{block:if400px}width:29%;{block:if400px}
-{block:if500px}width:26%;{block:if500px}
-{block:if250px}width:37%;{block:if250px}
-display:inline;
-float:right;
-text-align:right;
-color: {color:permalinktext};
+    {block:if400px}width:29%;{block:if400px}
+    {block:if500px}width:26%;{block:if500px}
+    {block:if250px}width:37%;{block:if250px}
+    display:inline;
+    float:right;
+    text-align:right;
+    color: {color:permalinktext};
 }
  
 #wrapper #content .post .footer .notes a {
-color: {color:permalinktext};
+    color: {color:permalinktext};
 }  
  
  #wrapper #content .post .footer .tags a {
- color: {color:Tags};
- text-decoration: none;
+    color: {color:Tags};
+    text-decoration: none;
  }
  
  #wrapper #content .post .footer .tags a:hover {
- text-decoration: none;
- color: {color:Links Hover};
+    text-decoration: none;
+    color: {color:Links Hover};
  }
  
  #wrapper #content .post .footer .tags .tag-commas:last-child {
- display: none;
+    display: none;
  }
  
 #wrapper #content .post a {
-color: {color:links};
-text-decoration: none;
+    color: {color:links};
+    text-decoration: none;
 }
  
 #wrapper #content .post .copy blockquote {
-margin: 10px 0px 10px 10px;
-padding-left: 15px;
-border-left: dashed 1px {color:blockquote};
+    margin: 10px 0px 10px 10px;
+    padding-left: 15px;
+    border-left: dashed 1px {color:blockquote};
 }
  
 #wrapper #content .bottom {
-height: 25px;
-margin: 0 auto;
+    height: 25px;
+    margin: 0 auto;
 }
  
 #wrapper #content #navigation {
-text-align: right;
-padding-bottom: 15px;
-padding-top: 10px;
-font-size: 9px;
-text-transform: lowercase;
+    text-align: right;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    font-size: 9px;
+    text-transform: lowercase;
 }
  
 #wrapper #content #navigation a {
-{block:ifnottransparentposts}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:post opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:post opacity});{/block:ifblackposts}{/block:ifnottransparentposts}
-{block:iftransparentposts}background: transparent;{/block:iftransparentposts}
-color: {color:text};
-padding: 5px 10px;
-text-decoration: none;
-{block:ifnotcustomfont}font-family: consolas;{block:ifnotcustomfont}
-{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-margin-left: 25px;
--moz-border-radius: 2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
-{block:ifpostshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifpostshadow}
+    {block:ifnottransparentposts}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:post opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:post opacity});{/block:ifblackposts}{/block:ifnottransparentposts}
+    {block:iftransparentposts}background: transparent;{/block:iftransparentposts}
+    color: {color:text};
+    padding: 5px 10px;
+    text-decoration: none;
+    {block:ifnotcustomfont}font-family: consolas;{block:ifnotcustomfont}
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    margin-left: 25px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    {block:ifpostshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifpostshadow}
 }
  
 #wrapper #content #navigation a:hover {
-opacity: 0.7;
-filter: alpha(opacity=70);
--ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 }
  
-#wrapper #content #navigation.jump_pagination {}
+#wrapper #content #navigation.jump_pagination {
+
+}
 #wrapper #content #navigation.jump_pagination a {
-margin: 0 0 0 4px;
+    margin: 0 0 0 4px;
 }
  
 #wrapper #content #navigation.jump_pagination .current_page {
-color: {color:links};
-{block:ifnottransparentposts}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:post opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:post opacity});{/block:ifblackposts}{/block:ifnottransparentposts}
-{block:iftransparentposts}background: transparent;{/block:iftransparentposts}
-{block:ifnotcustomfont}font-family: consolas;{/block:ifnotcustomfont}
-{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-font-size: 9px;
-padding: 5px 10px;
-margin: 0 0 0 4px;
--moz-border-radius: 2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
-{block:ifpostshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifpostshadow}
+    color: {color:links};
+    {block:ifnottransparentposts}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:post opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:post opacity});{/block:ifblackposts}{/block:ifnottransparentposts}
+    {block:iftransparentposts}background: transparent;{/block:iftransparentposts}
+    {block:ifnotcustomfont}font-family: consolas;{/block:ifnotcustomfont}
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    font-size: 9px;
+    padding: 5px 10px;
+    margin: 0 0 0 4px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    {block:ifpostshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifpostshadow}
 }
  
 #wrapper #content #navigation.jump_pagination .jump_page {}
 #wrapper #content .post .notecontainer {
-background: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.3);{/block:ifblackposts}
-{block:IfRoundedCorners}-moz-border-radius: 4px;
--webkit-border-radius: 4px;
-border-radius: 4px;{/block:IfRoundedCorners}
-font-family: consolas;
-color: {color:text};
-margin-top: 10px;
-margin-bottom: -10px;}
+    background: {block:ifnotblackposts}rgba(255, 255, 255, 0.3);{/block:ifnotblackposts}{block:ifblackposts}rgba(0, 0, 0, 0.3);{/block:ifblackposts}
+    
+    {block:IfRoundedCorners}-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;{/block:IfRoundedCorners}
+    
+    font-family: consolas;
+    color: {color:text};
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
 #wrapper #content .post .notecontainer a {
-color: {color:links};
-font-weight: bold;}
+    color: {color:links};
+    font-weight: bold;
+}
+
 #wrapper #content .post .notecontainer ol.notes {
-padding: 0px 0 10px 0;
-list-style-type: none;
-font-size: 11px;}
+    padding: 0px 0 10px 0;
+    list-style-type: none;
+    font-size: 11px;
+}
+
 #wrapper #content .post .notecontainer ol.notes li.note {
-padding: 10px 10px 0 10px;}
+    padding: 10px 10px 0 10px;
+}
+
 #wrapper #content .post .notecontainer ol.notes li.note img.avatar {
-vertical-align: -4px;
-margin-right: 10px;
-width: 16px;
-height: 16px;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: `10px;}
+    vertical-align: -4px;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: `10px;
+}
+
 #wrapper #content .post .notecontainer ol.notes li.note span.action {
-font-weight: normal;}
+    font-weight: normal;
+}
+
 #wrapper #content .post .notecontainer ol.notes li.note .answer_content {font-weight: normal;}
+
 #wrapper #content .post .notecontainer ol.notes li.note blockquote {
-border-left: 2px dashed {color:borders};padding: 4px 10px;margin: 10px 0px 0px 25px;}
+    border-left: 2px dashed {color:borders};padding: 4px 10px;margin: 10px 0px 0px 25px;
+}
+
 #wrapper #content .post .notecontainer ol.notes li.note blockquote a {
-text-decoration: none;}
- 
+    text-decoration: none;
+}
  
 .photo{
--webkit-transition: opacity 0.4s linear;
--moz-transition: opacity 0.4s linear;
-opacity: {text:photo opacity};
+    -webkit-transition: opacity 0.4s linear;
+    -moz-transition: opacity 0.4s linear;
+    opacity: {text:photo opacity};
 }
 .photo:hover{
--webkit-transition: opacity 0.4s linear;
--moz-transition: opacity 0.4s linear;
-opacity: 1;
+    -webkit-transition: opacity 0.4s linear;
+    -moz-transition: opacity 0.4s linear;
+    opacity: 1;
 }
- 
-{block:IfGrayscale}
-.photo{
-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-  filter: gray; /* IE6-9 */
- -webkit-filter: grayscale(1);
--webkit-transition: all 0.4s ease-in-out;
--moz-transition: all 0.4s ease-in-out;
--o-transition: all 0.4s ease-in-out;
--ms-transition: all 0.4s ease-in-out;
-transition: all 0.4s ease-in-out;
-}
- .photo:hover{
- filter: none;
--webkit-filter: grayscale(0);
--webkit-transition: all 0.7s ease-in-out;
--moz-transition: all 0.7s ease-in-out;
--o-transition: all 0.7s ease-in-out;
-}
-{/block:IfGrayscale}
- 
  
 .sidebar {
-position:fixed;
-float: auto;
-margin-top: {text:sidebarheight}px;
-margin-left:{text:sidebarleft}px;
-color: {color:description};
-font-family: consolas;
+    position:fixed;
+    float: auto;
+    margin-top: {text:sidebarheight}px;
+    margin-left:{text:sidebarleft}px;
+    color: {color:description};
+    font-family: consolas;
 }
  
 .sidebar .top {
-width:210px;
-position:fixed;
-{block:ifnottransparentsidebar}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:sidebar opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:sidebar opacity});{/block:ifblackposts}{/block:ifnottransparentsidebar}
-{block:iftransparentsidebar}background: transparent;{/block:iftransparentsidebar}
-padding: 0px;
-{block:IfRoundedCorners}-moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius:10px 10px 10px 10px;{/block:IfRoundedCorners}
-{Block:IfBorderssidebar}
-border: 1px solid {color:borders};
-{/Block:IfBorderssidebar}
-{block:ifsidebarshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifsidebarshadow}
+    width:210px;
+    position:fixed;
+    {block:ifnottransparentsidebar}{block:ifnotblackposts}background: rgba(255, 255, 255, {text:sidebar opacity});{/block:ifnotblackposts}{block:ifblackposts}background: rgba(0, 0, 0, {text:sidebar opacity});{/block:ifblackposts}{/block:ifnottransparentsidebar}
+    {block:iftransparentsidebar}background: transparent;{/block:iftransparentsidebar}
+    padding: 0px;
+    {block:IfRoundedCorners}-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius:10px 10px 10px 10px;{/block:IfRoundedCorners}
+    {Block:IfBorderssidebar}
+    border: 1px solid {color:borders};
+    {/Block:IfBorderssidebar}
+    {block:ifsidebarshadow} box-shadow: 0px 0px 20px 0px {color:shadow};{/block:ifsidebarshadow}
 }
  
 .sidebar .top .description {
-font-size: 11px;
-color: {color:description};
-font-family: consolas;
-position: relative;
-top: 8px;
-width:195px;
+    font-size: 11px;
+    color: {color:description};
+    font-family: consolas;
+    position: relative;
+    top: 8px;
+    width:195px;
 }
  
 .sidebar .top .description a {
-color: {color:links};
-font-weight: bold;}
+    color: {color:links};
+    font-weight: bold;
+}
 .sidebar .top .description a:hover {
-color: {color:links hover};
-font-weight: none;}
+    color: {color:links hover};
+    font-weight: none;
+}
  
 .sideimg img{
-position:absolute;
-top: {text:sideimgTop}px;
-left: {text:sideimgLeft}px;
-max-width: {text:sideimgmaxSize}px;
-{block:ifsideimgontopofsidebar}z-index: 2;{/block:ifsideimgontopofsidebar}
+    position:absolute;
+    top: {text:sideimgTop}px;
+    left: {text:sideimgLeft}px;
+    max-width: {text:sideimgmaxSize}px;
+    {block:ifsideimgontopofsidebar}z-index: 2;{/block:ifsideimgontopofsidebar}
 }
    
 #avatari {
     position:relative;
     z-index:10;
     padding-top:10px;
-    }
+}
    
 #avatari img{
- width:80px;
- height:80px;
- padding:10px;
- margin-bottom: -10px;
-{block:IfRoundedCorners}-moz-border-radius: 80px;
--webkit-border-radius: 80px;
-border-radius:80px;{/block:IfRoundedCorners}
- border:1px solid {color:borders};
-  -webkit-transition: all 0.4s ease-in-out;
--moz-transition: all 0.4s ease-in-out;
--o-transition: all 0.4s ease-in-out;
--ms-transition: all 0.4s ease-in-out;
-transition: all 0.4s ease-in-out;
+     width:80px;
+     height:80px;
+     padding:10px;
+     margin-bottom: -10px;
+    {block:IfRoundedCorners}-moz-border-radius: 80px;
+    -webkit-border-radius: 80px;
+    border-radius:80px;{/block:IfRoundedCorners}
+     border:1px solid {color:borders};
+      -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }  
  
 #avatari img:hover{ border:1px solid transparent;}
    
-.num a{
+.num a {
     color:{color:menu links text};
     {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
     {block:ifnotcustomfont}font-family: {font:accent};{/block:ifnotcustomfont}
@@ -677,17 +720,17 @@ transition: all 0.4s ease-in-out;
      -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
     transition: all 0.4s linear;
-    }
-.num a:hover{
+}
+.num a:hover {
     color:{color:links hover};
     letter-spacing: 2px;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
     transition: all 0.4s linear;
-    }
+}
    
 .num2 {font-size:9px;}
-.num2 a{
+.num2 a {
     color:{color:menu links text};
     {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
     {block:ifnotcustomfont}font-family: {font:accent};{/block:ifnotcustomfont}
@@ -695,31 +738,31 @@ transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
     transition: all 0.4s linear;
-    }
-.num2 a:hover{
+}
+.num2 a:hover {
     color:{color:links hover};
     text-decoration:underline;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
     transition: all 0.4s linear;
-    }
+}
  
 #s-m-t-tooltip {
-background: {color:tooltip};
-font-size: 7px;
-{block:ifnotcustomfont}font-family: consolas;{/block:ifnotcustomfont}
-{block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
-letter-spacing: 2px;
-text-transform: uppercase;
-color: {color:text};
-word-wrap: break-word;
-padding: 2px 5px 2px 6px;
-display: block;
--moz-border-radius: 2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
-margin: 10px 10px 10px 15px;
-border: 1px solid {color:borders};
+    background: {color:tooltip};
+    font-size: 7px;
+    {block:ifnotcustomfont}font-family: consolas;{/block:ifnotcustomfont}
+    {block:ifcustomfont}font-family: "boob";{/block:ifcustomfont}
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {color:text};
+    word-wrap: break-word;
+    padding: 2px 5px 2px 6px;
+    display: block;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    margin: 10px 10px 10px 15px;
+    border: 1px solid {color:borders};
 }
  
 {block:ifcustomcursor} body, a:hover {cursor: url(http://img69.imageshack.us/img69/7673/cursorw.png), url(http://img69.imageshack.us/img69/7673/cursorw.png), progress !important;}
@@ -728,34 +771,6 @@ border: 1px solid {color:borders};
  #cursor {position:fixed;z-index:-1;top:0px;left:0px;width:100%;height:100%;cursor: url(http://img69.imageshack.us/img69/7673/cursorw.png), url(http://img69.imageshack.us/img69/7673/cursorw.png), progress !important;} {/block:ifcustomcursor}
  
  </style>
- 
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script src="http://static.tumblr.com/mxokwyk/FIumglicr/mbtop.min.js"></script>
- <link href="#s-m-t-tooltip" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script type="text/javascript" src="http://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
-<script>
- (function($){
- $(document).ready(function(){
- $("[title]").style_my_tooltips();
- });
- })(jQuery);
-</script>
- 
- {block:IfInfiniteScroll}<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>{/block:IfInfiniteScroll}
- 
- {block:IfLazyload}<script type="text/javascript" src="http://static.tumblr.com/bmdsqsc/ogWm7q8w1/lazyload.js"></script>
-<script type="text/javascript" charset="utf-8">
-var $j = jQuery.noConflict();
-$j(function() {
-if (navigator.platform == "iPad" || navigator.platform == "iPhone") return;
-$j("img").lazyload({
-placeholder : "http://static.tumblr.com/twte3d7/RSvlio0k5/grey.gif",
-effect: "fadeIn",
-});
-});
-</script>{/block:Iflazyload}
- 
 </head>
  
 <body>
